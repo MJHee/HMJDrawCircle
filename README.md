@@ -4,5 +4,5 @@
 
 # 效果图
 
-![image](http://oauo2kp7f.bkt.clouddn.com/haveNumber@2x.png!)
-![image](http://oauo2kp7f.bkt.clouddn.com/textOnBeside.png!)
+![image](http://oauo2kp7f.bkt.clouddn.com/haveNumber@2x.png)
+![image](http://oauo2kp7f.bkt.clouddn.com/textOnBeside.png)

@@ -228,6 +228,7 @@
 				TargetAttributes = {
 					6F8E05E01E8BAD9D00A0FD34 = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = X69H552D76;
 						ProvisioningStyle = Automatic;
 					};
 					6F8E05FC1E8BAD9D00A0FD34 = {
@@ -446,7 +447,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = X69H552D76;
 				INFOPLIST_FILE = "DrawCircle-OC/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hemengjie.DrawCircle-OC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -457,7 +460,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = X69H552D76;
 				INFOPLIST_FILE = "DrawCircle-OC/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hemengjie.DrawCircle-OC";
 				PRODUCT_NAME = "$(TARGET_NAME)";

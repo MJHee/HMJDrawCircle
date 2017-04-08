@@ -27,7 +27,7 @@
     [circleView loadDataArray:@[@{@"number":@"300",@"color":[UIColor redColor],@"name":@"保底院校"},
                                  @{@"number":@"300",@"color":[UIColor blueColor],@"name":@"稳妥院校"},
                                  @{@"number":@"50",@"color":[UIColor colorWithRed:0.27 green:0.74 blue:0.27 alpha:1],@"name":@"冲刺院校"},
-                                 ] withType:HMJCircleManageViewTypeRound circleRadius:100 internalCircleRadius:80 textType:HMJCircleViewTypeHaveNumber startRadiu:-M_PI_2];
+                                 ] withType:HMJCircleManageViewTypeRound circleRadius:100 internalCircleRadius:80 textType:HMJCircleViewTypeTextOnBeside startRadiu:-M_PI_2];
     [self.view addSubview:circleView];
     
 }

@@ -10,6 +10,10 @@
 
 #define PI 3.14159265358979323846
 #define degreesToRadian(x) ( 180.0 / PI * (x))
+#define DT_IS_IPHONE4  (DT_SCREEN_MAIN_HEIGHT <= 480)
+#define DT_IS_IPHONE5  (DT_SCREEN_MAIN_HEIGHT == 568)
+//当前屏幕高度
+#define DT_SCREEN_MAIN_HEIGHT [[UIScreen mainScreen] bounds].size.height
 
 @interface HMJCircleView ()
 
@@ -129,7 +133,7 @@
     //文字的起点
     CGFloat textStartX;
     CGFloat textStartY;
-    lineLosePointX = smallCircleCenterPointX+10.0*cos(angele);
+    lineLosePointX = smallCircleCenterPointX + 10.0*cos(angele);
     lineLosePointY = smallCircleCenterPointY + 10.0*sin(angele);
     // 文字的长度
     CGSize textSizeNumber = [[NSString stringWithFormat:@"%@",_dataArray[n][@"name"]] sizeWithAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:12.0]}];
@@ -153,14 +157,14 @@
         textStartX = lineEndPointX - 5;
         textStartY = lineEndPointY - textSizeNumber.height*0.5;
     }
-    //设置指引线颜色
-    [color set];
     //画指引线
     CGContextBeginPath(ctx);
     CGContextMoveToPoint(ctx, smallCircleCenterPointX,smallCircleCenterPointY);
     CGContextAddLineToPoint(ctx, lineLosePointX, lineLosePointY);
     CGContextAddLineToPoint(ctx, lineEndPointX, lineEndPointY);
     CGContextSetLineWidth(ctx, 1.0);
+    //设置指引线颜色
+    [color set];
     //填充颜色
     CGContextSetFillColorWithColor(ctx , color.CGColor);
     CGContextStrokePath(ctx);
@@ -175,9 +179,21 @@
         paragraph.alignment = NSTextAlignmentRight;
     }
     if (textStartX>=self.frame.size.width/2) {//往右边跑
-        [_dataArray[n][@"name"] drawInRect:CGRectMake(textStartX-1, textStartY, textSizeNumber.width, 50) withAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:12.0],NSForegroundColorAttributeName:textColor,NSParagraphStyleAttributeName:paragraph}];
+        if (DT_IS_IPHONE4 || DT_IS_IPHONE5) {
+            
+            [_dataArray[n][@"name"] drawInRect:CGRectMake(textStartX-1, textStartY, textSizeNumber.width / 2, 50) withAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:12.0],NSForegroundColorAttributeName:textColor,NSParagraphStyleAttributeName:paragraph}];
+        }else {
+        
+            [_dataArray[n][@"name"] drawInRect:CGRectMake(textStartX-1, textStartY, textSizeNumber.width, 50) withAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:12.0],NSForegroundColorAttributeName:textColor,NSParagraphStyleAttributeName:paragraph}];
+        }
     }else{
-        [_dataArray[n][@"name"] drawInRect:CGRectMake(textStartX-textSizeNumber.width, textStartY, textSizeNumber.width, 50) withAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:12.0],NSForegroundColorAttributeName:textColor,NSParagraphStyleAttributeName:paragraph}];
+        if (DT_IS_IPHONE4 || DT_IS_IPHONE5) {
+            
+            [_dataArray[n][@"name"] drawInRect:CGRectMake(textStartX-textSizeNumber.width / 2, textStartY, textSizeNumber.width / 2, 50) withAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:12.0],NSForegroundColorAttributeName:textColor,NSParagraphStyleAttributeName:paragraph}];
+        }else {
+        
+            [_dataArray[n][@"name"] drawInRect:CGRectMake(textStartX-textSizeNumber.width, textStartY, textSizeNumber.width, 50) withAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:12.0],NSForegroundColorAttributeName:textColor,NSParagraphStyleAttributeName:paragraph}];
+        }
     }
 }
 

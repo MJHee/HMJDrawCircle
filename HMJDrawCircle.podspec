@@ -17,14 +17,14 @@ Pod::Spec.new do |s|
 
   s.name         = "HMJDrawCircle"
   s.version      = "1.0.0"
-  s.summary      = "According to the data scale drawing."
+  s.summary      = "Draw A Circle."
 
   # This description is used to generate tags and improve search results.
   #   * Think: What does it do? Why did you write it? What is the focus?
   #   * Try to keep it short, snappy and to the point.
   #   * Write the description between the DESC delimiters below.
   #   * Finally, don't worry about the indent, CocoaPods strips it!
-  s.description  = "According to the data scale drawing. HMJDrawCircle uses the oc language."
+  s.description  = "Draw A Circle, Draw A Circle, Draw A Circle."
 
   s.homepage     = "https://github.com/MJHee/HMJDrawCircle"
   # s.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
@@ -51,7 +51,7 @@ Pod::Spec.new do |s|
   #  profile URL.
   #
 
-  s.author             = { "贺梦洁" => "2372621687@qq.com" }
+  s.author             = { "MJHee" => "2372621687@qq.com" }
   # Or just: s.author    = "贺梦洁"
   # s.authors            = { "贺梦洁" => "2372621687@qq.com" }
   # s.social_media_url   = "http://twitter.com/贺梦洁"
@@ -78,7 +78,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "https://github.com/MJHee/HMJDrawCircle.git", :tag => "1.0.0" }
+  s.source       = { :git => "https://github.com/MJHee/HMJDrawCircle.git", :tag => "#{s.version}" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
